@@ -1,24 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { InputForm } from './components/InputForm';
+import { Items } from './components/Items';
 
 function App() {
+  const searchData:String[] = ["인디", "힙합", "블루스", "발라드", "인디 밴드", "힙합 발라드", "꽐라 블루스"];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputForm />
+      <Items data={searchData}/>
     </div>
   );
 }
