@@ -1,13 +1,26 @@
+import { useState } from "react"
 import styled from "styled-components"
 
 export const InputForm = () => {
+    const [value, setValue] = useState<String>("");
+    const inputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const text = e.target.value.replace(/\s/g, "");
+        setValue(text);
+        console.log(value);
+    }
+    const submitHandler = () => {
+
+    }
     return (
         <>
             <StyledContainer>
                 <StyledInput 
                 placeholder="검색"
+                onChange={inputChange}
                 />
-                <StyledBtn />
+                <StyledBtn 
+                onClick={submitHandler}
+                />
             </StyledContainer>
         </>
     )
